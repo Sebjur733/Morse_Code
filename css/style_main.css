@@ -1,0 +1,38 @@
+#output_morse {
+    
+    height: 40%;
+    resize: none;
+    box-sizing: border-box;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+#input_morse { 
+
+height: 40%;
+resize: none;
+box-sizing: border-box;
+display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+
+}
+
+#input_div {
+    width: 100%;
+    background-color: aqua;  
+    padding: 1%;
+  
+}
+
+#output_div {
+    width: 100%;
+    background-color: rgb(0, 255, 64);  
+    padding: 1%;
+}
+
+
+
