@@ -1,38 +1,68 @@
 #output_morse {
     
-    height: 40%;
+    height: 70%;
     resize: none;
     box-sizing: border-box;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 70%;
 }
 
 #input_morse { 
 
-height: 40%;
+height: 70%;
 resize: none;
 box-sizing: border-box;
 display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 70%;
 
+}
+
+#input_text {
+    height: 70%;
+resize: none;
+box-sizing: border-box;
+display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
+}
+
+#defaultArea {
+    height: 70%;
+resize: none;
+box-sizing: border-box;
+display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 70%;
 }
 
 #input_div {
     width: 100%;
     background-color: aqua;  
-    padding: 1%;
-  
+    padding-top: 1%;
+    padding-bottom: 1%;
+  margin-top: 10px;
+  float: right;
 }
 
 #output_div {
     width: 100%;
     background-color: rgb(0, 255, 64);  
-    padding: 1%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    margin-top: 10px;
+    float: right;
 }
 
+#mainContent {
+    background-color: rgb(213, 209, 209);
+    display: inline-block;
+    float: right;
+}
 
 

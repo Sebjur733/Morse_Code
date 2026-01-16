@@ -1,15 +1,8 @@
 import { dictionary } from './morseList.js';
+import { reverseDictionary } from './morseList.js';
 
-let textareaInput  = document.getElementById('input_morse');
-let userInput = "";
 
-textareaInput.addEventListener('input', () => {
-  userInput = textareaInput.value;
-    console.log("input: " + userInput + " type: " + typeof userInput); // Oppdateres hver gang brukeren endrer tekst
-});
-
-let userOutput = document.getElementById('output_morse');
-
+//function to translate from morse to text
 let decodeMorse = function(morseCode){
   // Your code here
   // You can use MORSE_CODE[morse]
@@ -58,8 +51,94 @@ let decodeMorse = function(morseCode){
  return finalWord;
 }
 
-textareaInput.addEventListener('input', () => {
-    decodeMorse(userInput);
-    userOutput.innerHTML = decodeMorse(userInput);
+
+//function for translating text to morse
+let encodeText = function(text) {
+  let wordArray = text;
+  let letters = "";
+  let morse = "";
+  for (let letter = 0; letter < wordArray.length; letter ++) {
+   console.log(wordArray[letter]);
+      if (wordArray[letter] !== ' ' && wordArray[letter].length == 1) {
+        morse += reverseDictionary[wordArray[letter]];
+        morse += " ";
+        console.log("word extends: " + morse);
+      } if (wordArray[letter] == " ") {
+        console.log("founs space");
+        morse += "   ";
+      }
+    }
+return morse;
+}
+
+//test run
+let testRun = encodeText('SOS SOS SOS');
+console.log("test run with !: " + testRun);
+
+
+/* 
+
+navigating between text and morse
+
+*/
+
+
+//variable saving html structures
+let textMorseHtml = '<textarea id="input_text" placeholder="write text here" rows="10" cols="50"></textarea>'
+let morseTextHtml = '<textarea id="input_morse" placeholder="write morse here" rows="10" cols="50"></textarea>'
+
+//variables saving radio for language changing
+const radioText = document.getElementById('text');
+const radioMorse = document.getElementById('morse');
+
+//event listeners to change between languages, based on radio change
+
+//text to morse
+radioText.addEventListener('change', () => {
+  document.getElementById("input_div").innerHTML = textMorseHtml;
+  let userOutput = document.getElementById('output_morse');
+  userOutput.innerHTML = '';
+  let textareaInputText  = document.getElementById('input_text');
+let userInputText = "";
+
+textareaInputText.addEventListener('input', () => {
+  userInputText = textareaInputText.value.toUpperCase();
+    console.log("input: " + userInputText + " type: " + typeof userInputText); // Updating each time a user change the text
+    userOutput.innerHTML = encodeText(userInputText);
 });
+});
+
+
+//morse to text
+radioMorse.addEventListener('change', () => {
+  document.getElementById("input_div").innerHTML = morseTextHtml;
+  let userOutput = document.getElementById('output_morse');
+  userOutput.innerHTML = '';
+
+  let textareaInputMorse  = document.getElementById('input_morse');
+  textareaInputMorse.addEventListener('input', () => {
+
+let userInputMorse = "";
+
+
+  userInputMorse = textareaInputMorse.value;
+    console.log("input: " + userInputMorse + " type: " + typeof userInputMorse); // Updating each time a user change the text
+    
+  decodeMorse(userInputMorse);
+    userOutput.innerHTML = decodeMorse(userInputMorse);
+
+  });
+
+});
+
+
+
+
+/*  
+
+Text to morse functionality
+
+*/
+
+
 

@@ -12,17 +12,26 @@
     <body>
        <h1>Welcome to morse code learning!!</h1>
 
+       <div id="mainContent">
+
+        <input type="radio" id="text" name="language">
+        <label for="text">Text to morse</label>
+
+        <input type="radio" id="morse" name="language">
+        <label for="morse">Morse to text</label>
+
        <div id="input_div">
-       <textarea id="input_morse" placeholder="write morsecode here" rows="4" cols="50"></textarea>
+       <textarea id="defaultArea" placeholder="choose a language" rows="10" cols="50" readonly></textarea>
 
        </div>
 
 
        <div id="output_div">
-<textarea id="output_morse" rows="4" cols="50" readonly>
+<textarea id="output_morse" rows="20" cols="50" readonly>
 
 </textarea>
 
+       </div>
        </div>
         
         <script type="module" src="js/translate.js" async defer></script>
