@@ -61,8 +61,24 @@ display: block;
 
 #mainContent {
     background-color: rgb(213, 209, 209);
-    display: inline-block;
-    float: right;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+   gap: 20px;
+   
+}
+
+#left {
+    background-color: rgb(175, 188, 27);
+    display: grid;
+    place-items: center;
 }
 
 
+
+
+#writeMorse {
+     width: 50%; /* A specific width is required */
+     padding: 40px;
+ 
+    
+}

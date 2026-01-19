@@ -1,0 +1,51 @@
+#writeMorseButton {
+     width: 50%; /* A specific width is required */
+     padding: 40px;
+ margin-bottom: 5%;
+    margin-top: 5%;
+}
+
+#input_morse {
+    height: 100%;
+resize: none;
+box-sizing: border-box;
+display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}
+
+#mainContent {
+    background-color: rgb(213, 209, 209);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+   gap: 20px;
+   
+   
+}
+
+#left {
+    background-color: rgb(175, 188, 27);
+    display: grid;
+    place-items: center;
+    padding-bottom: 5%;
+}
+
+#right {
+    background-color: rgb(175, 188, 27);
+    display: grid;
+    place-items: center;
+    padding-bottom: 5%;
+}
+
+#textArea {
+    height: 100%;
+resize: none;
+box-sizing: border-box;
+display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+}
+
+

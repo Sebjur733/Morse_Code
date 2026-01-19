@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/styleMorse.css">
+    </head>
+    <body>
+         <h1>Try writing morse code yourself</h1>
+
+
+       <div id="mainContent">
+        <div id="left">
+        <button id="writeMorseButton">Write Morse</button>
+
+       <textarea id="input_morse" placeholder="Morse code" rows="40" cols="50" readonly></textarea>
+       </div>
+
+        <div id="right">
+      <h1>Text:</h1>
+<textarea id="textArea" rows="40" cols="50" readonly> </textarea>
+
+       </div>
+       </div>
+        
+        <script type="module" src="js/morseMain.js" async defer></script>
+        <script type="module" src="js/morseList.js" async defer></script>
+    </body>
+</html>
