@@ -14,8 +14,6 @@ let decodeMorse = function(morseCode){
   let counter = 0;
   let finalWord;
 
-  
-  
   console.log("wordArray before first loop: " + wordArray + " its value: " + typeof wordArray)
   
   for (let letter = 0; letter < wordArray.length; letter ++) {
@@ -71,39 +69,9 @@ let encodeText = function(text) {
       }
     }
 return morse;
-}
+};
 
 
-let pressTimer;
-  let counter = 0;
-  const timeBorder = 2;
-  let finalValue;
- //counting function
-let count = function() {
-  counter ++;
-  console.log(counter);
-}
 
-//function when mouse down
-let mouseDown = function() {
-    finalValue = '';
-pressTimer = setInterval(count, 100);
-  
-}
 
-let mouseUp = function() {
-    
-  if (counter <= timeBorder) {
-    finalValue = '.';
-    console.log(finalValue);
-  }
-  else if (counter > timeBorder){
-    finalValue = '-';
-    console.log(finalValue);
-  }
-  counter = 0;
-  clearInterval(pressTimer);
-  return finalValue;
-}
-
-export { encodeText, decodeMorse, count, mouseDown, mouseUp}
+export {decodeMorse}
