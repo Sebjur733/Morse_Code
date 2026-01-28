@@ -20,7 +20,18 @@ display: block;
     border: none;
 }
 
+#input_morse_div {
+    background-color: white;
+    height: auto;
+    text-align: right;
+    width: 90%;
+    display: block;
+}
 
+#input_morse_text {
+     font-size: 50px;
+     
+}
 
 #mainContent {
     background-color: rgb(213, 209, 209);
