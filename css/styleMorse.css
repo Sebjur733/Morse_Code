@@ -30,7 +30,7 @@ display: block;
 
 #input_morse_text {
      font-size: 50px;
-     
+     position: relative;
 }
 
 #mainContent {
