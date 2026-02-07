@@ -10,19 +10,26 @@
         <link rel="stylesheet" href="css/styleMorse.css">
     </head>
     <body>
-         <h1>Try writing morse code yourself</h1>
+         <nav class="navbar">
+    <div class="navbar-left">
+        <a href="index.html">Home</a>
+        <a href="index.html">Translate</a>
+    </div>
+    <div class="navbar-right">
+        <a href="#contact">About us</a>
+    </div>
+</nav>
 
-
+<audio id="sound" src="morseSound.mp3" loop></audio>
        <div id="mainContent">
         
         <div id="left">
-            <p>Dot or line</p>
             <div id="meter">
                 <div id="progress"></div>
                 <div id="border"></div>
                 <span id="progressText"></span>
             </div>
-        <button id="writeMorseButton">Write Morse</button>
+        <button id="writeMorseButton"></button>
             
         
            <textarea id="input_morse"></textarea>

@@ -10,19 +10,20 @@
         <link rel="stylesheet" href="css/style_main.css">
     </head>
     <body>
-       <h1>Welcome to morse code learning!!</h1>
+       <nav class="navbar">
+    <div class="navbar-left">
+        <a href="index.html">Home</a>
+        <a href="morseClick.html">Write Morse</a>
+    </div>
+    <div class="navbar-right">
+        <a href="#contact">About us</a>
+    </div>
+</nav>
 
    
-        
-       
 
        <div id="mainContent">
-        <div id="left">
-        <button id="writeMorse">Write Morse</button>
 
-        </div>
-
-        <div id="right">
         <input type="radio" id="text" name="language">
         <label for="text">Text to morse</label>
 
@@ -32,16 +33,14 @@
        <div id="input_div">
        <textarea id="defaultArea" placeholder="choose a language" rows="10" cols="50" readonly></textarea>
 
-
        </div>
-
 
        <div id="output_div">
 <textarea id="output_morse" rows="20" cols="50" readonly>
 
 </textarea>
 </div>
-       </div>
+       
        </div>
         
         <script type="module" src="js/translate.js" async defer></script>

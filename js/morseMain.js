@@ -38,6 +38,8 @@ function stopIdleTracking() {
 }
 
 writeMorse.addEventListener('mousedown', function () {
+  document.getElementById('sound').play();
+  
  stopIdleTracking();
   mosueDownTime = Date.now();
 
@@ -54,6 +56,7 @@ progressInterval = setInterval(() => {
 })
 
 writeMorse.addEventListener('mouseup', function () {
+  document.getElementById('sound').pause();
   const duration = Date.now() - mosueDownTime;
   if (newProgressPosition.right <= borderPostion.right) {
     MorsePrint.value += '.';

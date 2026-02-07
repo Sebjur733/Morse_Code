@@ -47,4 +47,4 @@ return morse;
 
 
 
-export {decodeMorse}
+export {decodeMorse, encodeText}
