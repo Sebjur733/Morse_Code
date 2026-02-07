@@ -2,54 +2,27 @@ import { dictionary } from './morseList.js';
 import { reverseDictionary } from './morseList.js';
 
 
-//function to translate from morse to text
-let decodeMorse = function(morseCode){
-  // Your code here
-  // You can use MORSE_CODE[morse]
+
+let decodeMorse = function (morseCode) {
+   
   console.log(dictionary);
   //let arrayMorseWord = morseCode.split('   ');
-  let wordArray = morseCode;
-  let letters = "";
-  let humanWord = "";
-  let counter = 0;
-  let finalWord;
+  let trimmedMorse = morseCode.trim();
+let wordArray = [];
+  
+  wordArray = trimmedMorse.split(/\s{3,}/);
+  let decodeMessage = wordArray.map(word => {
+    let characters = word.split(' ');
 
-  console.log("wordArray before first loop: " + wordArray + " its value: " + typeof wordArray)
+    let decodeWord = characters.map(code => {
+      return dictionary[code] || '';
+    }).join('');
+    return decodeWord;
+  }).join(' ');
   
-  for (let letter = 0; letter < wordArray.length; letter ++) {
-   console.log(wordArray[letter]);
-      if (wordArray[letter] !== " ") {
-        letters += wordArray[letter];
-        console.log("letter extends: " + letters);
-      } if (wordArray[letter] == " ") {
-        counter ++;
-        console.log("counter: " + counter);
-        if(letters !== "") {
-          console.log(dictionary[letters]);
-        humanWord += dictionary[letters];
-        console.log("human word: " + humanWord)
-        letters = "";
-          counter = 0;
-        }
-        
-        }
-        if (counter === 2) {
-          console.log("we add a space in human word");
-          humanWord += " ";
-          counter = 0;
-        }
-        
-    }
-  
-  if (letters !== "") {
-    humanWord += dictionary[letters];
-  }
-  finalWord = humanWord.trim();
-  
-  console.log("final sentence: " + finalWord);
-  
- return finalWord;
+ return decodeMessage;
 }
+
 
 
 //function for translating text to morse

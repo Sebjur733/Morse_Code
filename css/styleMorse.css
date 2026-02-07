@@ -20,12 +20,30 @@ display: block;
     border: none;
 }
 
+#spawn {
+    float: right;
+    background-color: blue;
+    width: 10px;
+    height: 100%;
+}
+
+#outside_input_div {
+    background-color: white;
+    height: auto;
+    text-align: right;
+    width: 90%;
+    display: block;
+    overflow: hidden;
+    position: relative;
+}
 #input_morse_div {
     background-color: white;
     height: auto;
     text-align: right;
     width: 90%;
     display: block;
+    overflow: hidden;
+    position: relative;
 }
 
 #input_morse_text {

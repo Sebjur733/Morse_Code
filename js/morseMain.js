@@ -1,9 +1,7 @@
 import {decodeMorse} from './functions.js';
 
 //variables for mousehold event
-let MorsePrint = document.getElementById('input_morse_text');
-let morsePosition = MorsePrint.getBoundingClientRect();
-
+let MorsePrint = document.getElementById('input_morse');
 let TextOutput = document.getElementById('textArea');
 
 const writeMorse = document.getElementById('writeMorseButton');
@@ -21,33 +19,26 @@ const dotTime = 200;
 let progressInterval;
 
 
-
-
 let newProgressPosition = progressBox.getBoundingClientRect();
 
-//idle moving
-let morsePositionMove = 0;
-let idleInterval;
-function idleCounter () {
-  
-idleInterval = setInterval(() => {
-  morsePositionMove -= 5;
-  console.log('morse position moving: ' + morsePositionMove);
-  MorsePrint.style.left = morsePositionMove + "px";
-}, 500);
+let idleInterval = null;
+function startIdleTracking() {
+  stopIdleTracking();
+  idleInterval = setInterval(() => {
+    MorsePrint.value += ' ';
+    MorsePrint.scrollLeft = MorsePrint.scrollWidth;
+  }, 1000);
 }
 
-//mousedown
+function stopIdleTracking() {
+  if (idleInterval) {
+    clearInterval(idleInterval);
+    idleInterval = null;
+  }
+}
+
 writeMorse.addEventListener('mousedown', function () {
-  clearInterval(idleInterval);
-  const idleDuration = Date.now() - mouseUpTime;
-  console.log(idleDuration);
-  if (idleDuration >= 1000) {
-    MorsePrint.textContent += ' ';
-  }
-  if (idleDuration >= 3000) {
-    MorsePrint.textContent += '  ';
-  }
+ stopIdleTracking();
   mosueDownTime = Date.now();
 
   
@@ -62,26 +53,23 @@ progressInterval = setInterval(() => {
 }, 10);
 })
 
-//mouseup
 writeMorse.addEventListener('mouseup', function () {
   const duration = Date.now() - mosueDownTime;
   if (newProgressPosition.right <= borderPostion.right) {
-    MorsePrint.textContent += '.';
+    MorsePrint.value += '.';
   }
   else {
-    MorsePrint.textContent += '-';
+    MorsePrint.value += '-';
   }
-  TextOutput.innerHTML = decodeMorse(MorsePrint.textContent);
+  TextOutput.innerHTML = decodeMorse(MorsePrint.value);
   
 mouseUpTime = Date.now();
 
 clearInterval(progressInterval);
 progressBox.style.width = '0px';
 MorsePrint.scrollLeft = MorsePrint.scrollWidth;
-idleCounter();
+
+startIdleTracking();
 });
 
 
-
-
-  
