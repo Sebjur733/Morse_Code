@@ -20,7 +20,7 @@
     </div>
 </nav>
 
-<audio id="sound" src="morseSound.mp3" loop></audio>
+
        <div id="mainContent">
         
         <div id="left">
@@ -30,9 +30,10 @@
                 <span id="progressText"></span>
             </div>
         <button id="writeMorseButton"></button>
-            
         
            <textarea id="input_morse"></textarea>
+           <input type="range" min="0" max="10" value="5" id="slider">
+           <p>Speed: <span id="value">1</span></p>
        </div>
 
         <div id="right">
