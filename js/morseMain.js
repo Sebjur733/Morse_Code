@@ -78,7 +78,7 @@ progressInterval = setInterval(() => {
   progressPositionMove ++;
   progressBox.style.width = `${progressPositionMove}px`;
   newProgressPosition = progressBox.getBoundingClientRect();
-}, 10);
+}, 1);
 })
 
 function checkPosition() {
