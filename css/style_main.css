@@ -1,94 +1,137 @@
+/* BASE */
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* NAVBAR */
+
 .navbar {
     display: flex;
-    justify-content: space-between; /* Pushes content to the far ends */
+    justify-content: space-between;
     align-items: center;
-    overflow: hidden;
-    padding: 0 20px; /* Add some padding on the sides */
+    background-color: #1f2937;
+    padding: 0 40px;
+    flex-wrap: wrap;
 }
 
 .navbar a {
-    float: left; /* Optional, but standard for links */
-    color: rgb(0, 0, 0);
+    color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    font-weight: 500;
+    transition: 0.2s ease;
 }
 
 .navbar a:hover {
-    background-color: #ddd;
-  color: black;
+    background-color: #374151;
+    border-radius: 6px;
 }
 
-.navbar-left, .navbar-right {
-    display: flex; /* Makes the links inside behave as flex items */
+.navbar-left,
+.navbar-right {
+    display: flex;
     align-items: center;
 }
 
+/* MAIN CONTENT */
 
 #mainContent {
-    background-color: rgb(236, 231, 231);
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
 
-#output_morse {
-    
-    height: 70%;
+/* RADIO BUTTONS */
+
+input[type="radio"] {
+    margin-right: 6px;
+}
+
+label {
+    margin-right: 20px;
+    font-weight: 500;
+}
+
+/* INPUT / OUTPUT SECTIONS */
+
+#input_div,
+#output_div {
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* TEXTAREAS */
+
+textarea {
+    width: 100%;
+    min-height: 180px;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid #d1d5db;
+    font-size: 16px;
     resize: none;
     box-sizing: border-box;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 70%;
+    transition: 0.2s ease;
 }
 
-#input_morse { 
-
-height: 70%;
-resize: none;
-box-sizing: border-box;
-display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 70%;
-
+textarea:focus {
+    outline: none;
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
 }
 
-#input_text {
-    height: 70%;
-resize: none;
-box-sizing: border-box;
-display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 70%;
+/* RESPONSIVE */
+
+@media (max-width: 768px) {
+
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px 20px;
+    }
+
+    .navbar-left,
+    .navbar-right {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .navbar a {
+        padding: 10px 0;
+    }
+
+    #mainContent {
+        margin: 20px;
+        padding: 20px;
+    }
+
+    label {
+        display: block;
+        margin: 10px 0;
+    }
+
+    textarea {
+        min-height: 150px;
+        font-size: 14px;
+    }
 }
 
-#defaultArea {
-    height: 70%;
-resize: none;
-box-sizing: border-box;
-display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 70%;
-}
+@media (max-width: 480px) {
 
-#input_div {
-    width: 100%;
-    padding-top: 1%;
-    padding-bottom: 1%;
-  margin-top: 10px;
-}
+    #mainContent {
+        margin: 10px;
+        padding: 15px;
+    }
 
-#output_div {
-    width: 100%; 
-    padding-top: 1%;
-    padding-bottom: 1%;
-    margin-top: 10px;
-}
-
-
-#writeMorse {
-     width: 50%; /* A specific width is required */
-     padding: 40px;
- 
+    textarea {
+        min-height: 130px;
+        font-size: 13px;
+    }
 }

@@ -3,27 +3,21 @@ import {decodeMorse} from './functions.js';
 //variables for mousehold event
 let MorsePrint = document.getElementById('input_morse');
 let TextOutput = document.getElementById('textArea');
-
+const slider = document.getElementById("slider");
+const valueDisplay = document.getElementById("value");
 const writeMorse = document.getElementById('writeMorseButton');
 const progressBox = document.getElementById('progress');
-let progressPosition = progressBox.getBoundingClientRect();
-console.log('position progressrect: ' + progressPosition.right);
-
 const borderLine = document.getElementById('border');
 
-
-
-let mosueDownTime = 0;
-let mouseUpTime = Date.now();
-const dotTime = 200;
-let progressInterval;
-
-
 let newProgressPosition = progressBox.getBoundingClientRect();
-
-let idleSpeed = 1000;
+let mouseDownTime = 0;
+let progressInterval;
 let idleInterval = null;
-function startIdleTracking() {
+let speed = 1000;
+let ctx, osc, gain;
+
+
+function startIdleTracking(idleSpeed) {
   stopIdleTracking();
   idleInterval = setInterval(() => {
     MorsePrint.value += ' ';
@@ -38,10 +32,14 @@ function stopIdleTracking() {
   }
 }
 
+slider.addEventListener("input", () => {
+  valueDisplay.textContent = slider.value;
+  speed = 1000 / slider.value;
+  startIdleTracking(speed);
+});
 
 
 
-let ctx, osc, gain;
 
 let mouseBool = false;
 //mouse down
@@ -70,7 +68,7 @@ writeMorse.addEventListener('mousedown', function () {
 
 
  stopIdleTracking();
-  mosueDownTime = Date.now();
+  mouseDownTime = Date.now();
 
   
   let progressPositionMove = 0;
@@ -80,7 +78,6 @@ progressInterval = setInterval(() => {
   progressPositionMove ++;
   progressBox.style.width = `${progressPositionMove}px`;
   newProgressPosition = progressBox.getBoundingClientRect();
-  console.log('position progressrect: ' + newProgressPosition.right);
 }, 10);
 })
 
@@ -100,20 +97,14 @@ addEventListener('mouseup', function () {
     mouseBool = false;
   if (gain) gain.gain.setValueAtTime(0, ctx.currentTime);
 
-  const duration = Date.now() - mosueDownTime;
-
   checkPosition();
   
   TextOutput.innerHTML = decodeMorse(MorsePrint.value);
   
-mouseUpTime = Date.now();
-
 clearInterval(progressInterval);
 progressBox.style.width = '0px';
 MorsePrint.scrollLeft = MorsePrint.scrollWidth;
 
-startIdleTracking();
+startIdleTracking(speed);
   }
 });
-
-

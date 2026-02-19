@@ -1,19 +1,8 @@
 
 import { encodeText, decodeMorse} from './functions.js';
 
-
-
-
 //variables for mousehold event
 let userOutput = document.getElementById('output_morse');
-
-
-/* 
-
-navigating between text and morse
-
-*/
-
 
 //variable saving html structures
 let textMorseHtml = '<textarea id="input_text" placeholder="write text here" rows="10" cols="50"></textarea>'
@@ -41,8 +30,6 @@ textareaInputText.addEventListener('input', () => {
 
 
 //morse to text
-
-////// ended here....
 radioMorse.addEventListener('change', () => {
   document.getElementById("input_div").innerHTML = morseTextHtml;
   userOutput.innerHTML = '';
@@ -60,16 +47,3 @@ let userInputMorse = "";
   });
 
 });
-
-
-
-
-
-/*  
-
-Text to morse functionality
-
-*/
-
-
-
