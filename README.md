@@ -2,7 +2,7 @@
 
 This project is a web-based tool for translating between text and Morse code. It includes two main modes: Text to Morse and Morse to Text, as well as a mouse-hold interface to manually input Morse code with visual feedback.
 
-Features
+Features:
 
 Translate plain text to Morse code.
 
@@ -16,6 +16,7 @@ Visual progress bar for timing dots and dashes.
 
 Supports letters, numbers, and common punctuation.
 
+
 File Structure
 /js
  ├─ functions.js       # Encoding and decoding functions
@@ -27,6 +28,7 @@ File Structure
  ├─ styleMorse.css     # Styling for mouse-hold Morse input page
 /index.html            # Translation page
 /morseClick.html       # Mouse-hold Morse input page
+
 Usage
 Translation Page
 
@@ -38,6 +40,7 @@ Enter text or Morse code in the input area.
 
 The translated output appears in the output area automatically.
 
+
 Mouse-Hold Morse Input
 
 Open morseClick.html.
@@ -48,11 +51,13 @@ The progress bar shows timing, and the translation appears in real-time in the t
 
 Adjust the input speed with the slider.
 
+
 Morse Code Support
 
 Supports letters A-Z, numbers 0-9, and common punctuation such as:
 
 . , ? ! ' " & : ; = + - / _ @ SOS
+
 Development Notes
 
 functions.js exports encodeText and decodeMorse functions.
@@ -62,3 +67,11 @@ morseList.js contains dictionary (Morse → Text) and reverseDictionary (Text �
 Mouse-hold input uses AudioContext for sound feedback and timing detection.
 
 The project is modular, using ES6 modules for clean separation of functionality.
+
+
+How to Run
+
+Open the project directly in your browser using this link:
+https://699768c9aada003fa9b6552b--morsecode73.netlify.app/
+
+Select the desired mode (Text to Morse or Morse to Text) or use the mouse-hold feature to input Morse code manually.
