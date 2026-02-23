@@ -1,2 +1,0 @@
-todo: 
-fix in js spawn location for morse symbols. 
