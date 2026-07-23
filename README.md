@@ -72,6 +72,6 @@ The project is modular, using ES6 modules for clean separation of functionality.
 How to Run
 
 Open the project directly in your browser using this link:
-https://699768c9aada003fa9b6552b--morsecode73.netlify.app/
+https://morsecode73.netlify.app/
 
 Select the desired mode (Text to Morse or Morse to Text) or use the mouse-hold feature to input Morse code manually.
